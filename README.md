@@ -18,7 +18,7 @@ Articulate AI empowers underprivileged and disabled children by enhancing their 
 
 1. Clone the repository:
    ```bash
-   git clone 
+   git clone https://github.com/HarshRaj1111/ArticulateAI.git
    ```
 
 2. Open Chrome and navigate to `chrome://extensions/`.
@@ -28,3 +28,7 @@ Articulate AI empowers underprivileged and disabled children by enhancing their 
 4. Click **Load unpacked** and select the `ArticulateAi` folder.
 
 5. The extension will be added to your browser.
+
+## License
+
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
