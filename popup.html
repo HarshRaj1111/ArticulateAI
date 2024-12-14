@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rephrase Assistant</title>
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    /* Basic styling */
+    #rephraseButton2 {
+      display: none; /* Hide the rephrase button 2 by default */
+    }
+
+    #outputSection2 {
+      display: none; /* Keep the second output section hidden by default */
+    }
+
+    #inputSection2 {
+      display: none;
+      height: 130px; /* Keep the second input section hidden by default */
+    }
+  </style>
+
+</head>
+
+<body>
+  <div id="app">
+    <!-- Header Section -->
+    <div id="header">
+      <div id="htitle">
+        <h1>ArticulateAI</h1>
+      </div>
+        <div id="second-page">
+          <button id="right-button">
+            <img class="right-arrow" src="icon\arrow-right-336-svgrepo-com.svg" alt="arrow">
+          </button>
+        </div>
+    </div>
+
+    <!-- Tone Selection Section -->
+    <div id="toneSelection">
+      <select id="toneSelect">
+        <option value="professional">Professional</option>
+        <option value="polite">Polite</option>
+        <option value="romantic">Romantic</option>
+        <option value="friendly">Friendly</option>
+        <option value="assertive">Assertive</option>
+        <option value="sympathetic">Sympathetic</option>
+        <option value="casual">Casual</option>
+        <option value="optimistic">Optimistic</option>
+        <option value="direct">Direct</option>
+        <option value="motivational">Motivational</option>
+        <option value="empathetic">Empathetic</option>
+        <option value="formal">Formal</option>
+        <option value="inquisitive">Inquisitive</option>
+        <option value="encouraging">Encouraging</option>
+        <option value="reassuring">Reassuring</option>
+      </select>
+    </div>
+
+    <!-- Input Sentence Section -->
+    <div id="inputSection">
+      <textarea id="inputSentence" placeholder="Enter your sentence here..."></textarea>
+      <button id="micButton" class="icon-button mic-button" data-tooltip="Record" style="
+        top: -60px;
+        left: 360px;
+    ">
+        <img src="https://img.icons8.com/material-sharp/24/FFFFFF/microphone--v1.png" alt="Microphone">
+      </button>
+    </div>
+
+    <!-- Rephrase Button Section -->
+    <div id="buttonSection">
+      <button id="rephraseButton">Rephrase</button>
+    </div>
+
+    <!-- Output Sentence Section -->
+    <div id="outputSection">
+      <textarea id="outputSentence" readonly placeholder="Rephrased sentence will appear here..."></textarea>
+      <div class="output-buttons">
+        <button id="speakerButton" class="icon-button" data-tooltip="Speak">
+          <img src="https://img.icons8.com/material-sharp/24/FFFFFF/speaker.png" alt="Speaker">
+        </button>
+        <button id="copyButton" class="icon-button" data-tooltip="Copy">
+          <img src="https://img.icons8.com/material-outlined/24/FFFFFF/copy.png" alt="Copy">
+        </button>
+      </div>
+    </div>
+    <!-- Input Section 2 (Hidden by default) -->
+    <div id="inputSection2">
+      <textarea id="inputSentence2" placeholder="Enter new sentence here..."></textarea>
+      <button id="micButton2" class="icon-button mic-button" data-tooltip="Record" style="
+      top: -60px;
+      left: 340px;">
+        <img src="https://img.icons8.com/material-sharp/24/FFFFFF/microphone--v1.png" alt="Microphone">
+      </button>
+    </div>
+    <div id="buttonSection">
+      <button id="rephraseButton2">Generate</button>
+    </div>
+    <!-- Output Section 2 (Hidden by default) -->
+    <div id="outputSection2">
+      <textarea id="outputSentence2" readonly placeholder="Output...."></textarea>
+      <div class="output-buttons" style="
+      top: 405px;
+      left: 345px;">
+        <button id="speakerButton2" class="icon-button" data-tooltip="Speak">
+          <img src="https://img.icons8.com/material-sharp/24/FFFFFF/speaker.png" alt="Speaker">
+        </button>
+        <button id="copyButton2" class="icon-button" data-tooltip="Copy">
+          <img src="https://img.icons8.com/material-outlined/24/FFFFFF/copy.png" alt="Copy">
+        </button>
+      </div>
+    </div>
+
+  </div>
+  <!-- Link to the JavaScript file that handles rephrasing -->
+  <script src="popup.js"></script>
+</body>
+
+</html>

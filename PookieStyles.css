@@ -1,0 +1,306 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+    background: #202020;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    overflow: hidden;
+  }
+  
+  #app {
+    background: linear-gradient(135deg, #202020, #212121);
+    padding: 20px;  /* Reduced padding */
+    border-radius: 10px;
+    width: 450px;  /* Reduced container width */
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%; /* Makes the app fill the available space */
+    min-height: 100%;
+  }
+  
+  /* Header Container */
+  #header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 20px;
+    padding-right: 20px;
+    padding-bottom: 10px;
+    padding-left: 20px;
+    width: 100%;
+    height: 90px;
+    position: relative;
+    background: linear-gradient(135deg, #202020, #212121);
+  }
+  
+  /* Title Styling */
+  #htitle {
+    /* Remove absolute positioning */
+    display: flex;
+    text-align: center;
+    flex-grow: 1; /* Allow title to take up available space */
+  }
+  
+  #htitle h1 {
+    font-size: 24px;
+    color: transparent;
+    background: linear-gradient(to right, white, #ffc0cb, #d8bfd8);
+    background-clip: text;
+    -webkit-background-clip: text;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+    margin: 0;
+  }
+  
+  /* Right Button Styling */
+  .linkor {
+      opacity: 1;
+      color: transparent;
+  }
+  
+  #right-button {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 12px;
+    width: 52px;
+    align-items: center;
+    transition: all 0.3s ease;
+  }
+  
+  #right-button:hover {
+    transform: scale(1.1);
+  }
+  
+  #right-button:active {
+    transform: scale(0.95);
+  }
+  
+  .right-arrow {
+    width: 24px;
+    height: 24px;
+    filter: invert(1);
+  }
+  
+  textarea, select, button {
+    width: 100%;  /* Full width */
+    padding: 12px;  /* Slightly reduced padding */
+    margin: 10px 0;  /* Reduced margin */
+    border-radius: 8px;
+    border: 1px solid #999;
+    background: #363636;
+    color: white;
+    transition: box-shadow 0.3s ease;
+  }
+  
+  textarea, select {
+    position: relative;
+    z-index: 1;
+  }
+  
+  textarea:focus, select:focus {
+    outline: none;
+    border: none;
+    background: #424242;
+    box-shadow: 
+      0 0 10px rgba(255, 255, 255, 0.4),
+      0 0 20px rgba(255, 182, 193, 0.4),
+      0 0 30px rgba(255, 192, 203, 0.4);
+  }
+  
+  textarea {
+    resize: none;
+    height: 120px;  /* Slightly reduced height */
+    font-size: 14px;  /* Slightly reduced font size */
+    width: 380px;  /* Increased textarea width */
+  }
+  
+  select {
+    font-size: 14px;
+    width: 380px;  /* Reduced select width */
+  }
+  
+  #outputSentence {
+    background-color: #363636;
+    color: transparent;
+    background: linear-gradient(to right, white, #ffffff, #ffffff);
+    -webkit-background-clip: text;
+    text-fill-color: transparent;
+  }
+  
+  button {
+    background: linear-gradient(135deg, #585858, #585858);
+    color: white;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 16px;  /* Reduced font size */
+    padding: 12px 25px;  /* Reduced padding */
+    width: auto;  /* Reduced minimum width */
+    border: none;
+    transition: background 0.3s ease, box-shadow 0.3s ease, color 0.3s ease;
+  }
+  #rephraseButton{
+    width: 380px;
+  
+  }
+  #rephraseButton2{
+    width: 380px;
+  
+  }
+  
+  button:hover {
+    background: linear-gradient(to right, white, #ffb6c1);
+    color: #2d2d2d;
+    animation: lightUp 1.5s infinite;
+    box-shadow: 
+      0 0 15px rgba(255, 255, 255, 0.5),
+      0 0 25px rgba(255, 192, 203, 0.5),
+      0 0 35px rgba(255, 182, 193, 0.5);
+  }
+  
+  button:active {
+    background: linear-gradient(to right, white, #ffb6c1);
+    color: #363636;
+    box-shadow: 
+      0 0 15px rgba(255, 255, 255, 0.8),
+      0 0 25px rgba(255, 182, 193, 0.8),
+      0 0 35px rgba(255, 192, 203, 0.8);
+  }
+  
+  @keyframes lightUp {
+    0% {
+      box-shadow: 
+        0 0 10px rgba(255, 255, 255, 0.4),
+        0 0 20px rgba(255, 192, 203, 0.4),
+        0 0 30px rgba(255, 182, 193, 0.4);
+    }
+    50% {
+      box-shadow: 
+        0 0 20px rgba(255, 192, 203, 0.6),
+        0 0 30px rgba(255, 182, 193, 0.6),
+        0 0 40px rgba(255, 255, 255, 0.6);
+    }
+    100% {
+      box-shadow: 
+        0 0 10px rgba(255, 255, 255, 0.4),
+        0 0 20px rgba(255, 192, 203, 0.4),
+        0 0 30px rgba(255, 182, 193, 0.4);
+    }
+  }
+  /* Add these styles to your existing CSS */
+  /* Update the base button styles */
+  #inputSection {
+    position: relative; /* Add relative positioning here */
+    width: 100%;
+    margin-bottom: 5px;
+    height: 130px;
+  }
+  
+  #outputSection {
+    position: relative; /* Add relative positioning here */
+  }
+  #buttonSection {
+    margin-top: 10px; /* Decrease this value to reduce spacing */
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+  .icon-button {
+    position: absolute;
+    width: 24px !important;
+    height: 24px !important;
+    min-width: unset !important;
+    padding: 4px !important;
+    background: transparent !important;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    z-index: 2;
+  }
+  
+  .icon-button img {
+    width: 16px;
+    height: 16px;
+    transition: transform 0.3s ease;
+  }
+  
+  .icon-button:hover img {
+    transform: scale(1.1);
+  }
+  
+  .icon-button:active img {
+    transform: scale(0.95);
+  }
+  
+  /* Microphone button specific styles */
+  .mic-button {
+    bottom: 10px;
+    right: 10px;
+  }
+  
+  .mic-button.recording img {
+    animation: pulse 1.5s infinite;
+  }
+  
+  /* Output buttons container */
+  .output-buttons {
+    position: absolute;
+    bottom: 15px;
+    right: 15px;
+    display: flex;
+    gap: 8px;
+    z-index: 2;
+  }
+  
+  /* Tooltip styles */
+  .icon-button {
+    position: relative;
+  }
+  
+  .icon-button::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    top: -25px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 4px 8px;
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    font-size: 11px;
+    border-radius: 4px;
+    white-space: nowrap;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+  }
+  
+  .icon-button:hover::after {
+    opacity: 1;
+    visibility: visible;
+  }
+  
+  @keyframes pulse {
+    0% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.1);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+  

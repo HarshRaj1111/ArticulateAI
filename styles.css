@@ -1,0 +1,302 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: #1b1c1b; /* Near-black solid background */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  overflow: hidden;
+}
+
+#app {
+  background: #1b1c1b; /* Same near-black solid background */
+  padding: 20px;
+  border-radius: 10px;
+  width: 450px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  min-height: 100%;
+}
+
+/* Header Container */
+#header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  width: 100%;
+  height: 90px;
+  position: relative;
+  background: #1b1c1b; /* Same near-black solid background */
+}
+
+/* Title Styling */
+#htitle {
+  display: flex;
+  text-align: center;
+  flex-grow: 1;
+}
+
+#htitle h1 {
+  font-size: 24px;
+  color: transparent;
+  background: linear-gradient(to right, #80ed99, #38a3a5, #56cfe1);
+  background-clip: text;
+  -webkit-background-clip: text;
+  text-shadow: 0 0 10px rgba(56, 207, 225, 0.3);
+  margin: 0;
+}
+
+/* Right Button Styling */
+.linkor {
+    opacity: 1;
+    color: transparent;
+}
+
+#right-button {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 12px;
+  width: 52px;
+  align-items: center;
+  transition: all 0.3s ease;
+}
+
+#right-button:hover {
+  transform: scale(1.1);
+}
+
+#right-button:active {
+  transform: scale(0.95);
+}
+
+.right-arrow {
+  width: 24px;
+  height: 24px;
+  filter: invert(1);
+}
+
+textarea, select, button {
+  width: 100%;
+  padding: 12px;
+  margin: 10px 0;
+  border-radius: 8px;
+  border: 1px solid #444;
+  background: #121212; /* Darker near-black background */
+  color: white;
+  transition: box-shadow 0.3s ease;
+}
+
+textarea, select {
+  position: relative;
+  z-index: 1;
+}
+
+textarea:focus, select:focus {
+  outline: none;
+  border: none;
+  background: #1c1c1c; /* Slightly darker for focus effect */
+  box-shadow: 
+    0 0 10px rgba(56, 207, 225, 0.4),
+    0 0 20px rgba(128, 237, 153, 0.4),
+    0 0 30px rgba(56, 207, 225, 0.4);
+}
+
+textarea {
+  resize: none;
+  height: 120px;
+  font-size: 14px;
+  width: 380px;
+}
+
+select {
+  font-size: 14px;
+  width: 380px;
+}
+
+#outputSentence {
+  background-color: #121212;
+  color: transparent;
+  background: linear-gradient(to right, #80ed99, #38a3a5, #56cfe1);
+  -webkit-background-clip: text;
+  text-fill-color: transparent;
+}
+
+button {
+  background: linear-gradient(135deg, #1f1f1f, #343434); /* Darker gradient */
+  color: white;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 16px;
+  padding: 12px 25px;
+  width: auto;
+  border: none;
+  transition: background 0.3s ease, box-shadow 0.3s ease, color 0.3s ease;
+}
+
+#rephraseButton {
+  width: 380px;
+}
+
+#rephraseButton2 {
+  width: 380px;
+}
+
+button:hover {
+  background: linear-gradient(to right, #80ed99, #38a3a5);
+  color: #0a0a0a;
+  animation: lightUp 1.5s infinite;
+  box-shadow: 
+    0 0 15px rgba(128, 237, 153, 0.5),
+    0 0 25px rgba(56, 207, 225, 0.5),
+    0 0 35px rgba(56, 207, 225, 0.5);
+}
+
+button:active {
+  background: linear-gradient(to right, #80ed99, #38a3a5);
+  color: #121212;
+  box-shadow: 
+    0 0 15px rgba(128, 237, 153, 0.8),
+    0 0 25px rgba(56, 207, 225, 0.8),
+    0 0 35px rgba(56, 207, 225, 0.8);
+}
+
+@keyframes lightUp {
+  0% {
+    box-shadow: 
+      0 0 10px rgba(56, 207, 225, 0.4),
+      0 0 20px rgba(128, 237, 153, 0.4),
+      0 0 30px rgba(56, 207, 225, 0.4);
+  }
+  50% {
+    box-shadow: 
+      0 0 20px rgba(56, 207, 225, 0.6),
+      0 0 30px rgba(128, 237, 153, 0.6),
+      0 0 40px rgba(56, 207, 225, 0.6);
+  }
+  100% {
+    box-shadow: 
+      0 0 10px rgba(56, 207, 225, 0.4),
+      0 0 20px rgba(128, 237, 153, 0.4),
+      0 0 30px rgba(56, 207, 225, 0.4);
+  }
+}
+
+#inputSection {
+  position: relative;
+  width: 100%;
+  margin-bottom: 5px;
+  height: 130px;
+}
+
+#outputSection {
+  position: relative;
+}
+
+#buttonSection {
+  margin-top: 10px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.icon-button {
+  position: absolute;
+  width: 24px !important;
+  height: 24px !important;
+  min-width: unset !important;
+  padding: 4px !important;
+  background: transparent !important;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  z-index: 2;
+}
+
+.icon-button img {
+  width: 16px;
+  height: 16px;
+  transition: transform 0.3s ease;
+}
+
+.icon-button:hover img {
+  transform: scale(1.1);
+}
+
+.icon-button:active img {
+  transform: scale(0.95);
+}
+
+/* Microphone button specific styles */
+.mic-button {
+  bottom: 10px;
+  right: 10px;
+}
+
+.mic-button.recording img {
+  animation: pulse 1.5s infinite;
+}
+
+/* Output buttons container */
+.output-buttons {
+  position: absolute;
+  bottom: 15px;
+  right: 15px;
+  display: flex;
+  gap: 8px;
+  z-index: 2;
+}
+
+/* Tooltip styles */
+.icon-button {
+  position: relative;
+}
+
+.icon-button::after {
+  content: attr(data-tooltip);
+  position: absolute;
+  top: -25px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 4px 8px;
+  background: rgba(0, 0, 0, 0.8);
+  color: white;
+  font-size: 11px;
+  border-radius: 4px;
+  white-space: nowrap;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+}
+
+.icon-button:hover::after {
+  opacity: 1;
+  visibility: visible;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
